@@ -136,7 +136,7 @@ export const ConsultationModal: React.FC = () => {
                 </div>
 
                 <button
-                  className="w-full py-4 bg-primary text-on-primary hover:bg-primary-container transition-all duration-300 font-label rounded shadow-[0_4px_25px_rgba(44,37,35,0.08)] mt-8 cursor-pointer"
+                  className="w-full py-4 bg-primary text-white hover:bg-secondary transition-all duration-300 font-label-md text-label-md rounded shadow-[0_4px_25px_rgba(44,37,35,0.08)] mt-8 cursor-pointer font-bold uppercase tracking-wider"
                   type="submit"
                 >
                   Request Appointment

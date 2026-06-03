@@ -50,16 +50,12 @@ const PRODUCTS_DATA: Product[] = [
 
 interface TrendingProductsProps {
   products?: Product[];
-  selectedCategory: string;
-  onSelectCategory: (category: string) => void;
 }
 
 export const TrendingProducts: React.FC<TrendingProductsProps> = ({
   products = [],
-  selectedCategory,
-  onSelectCategory,
 }) => {
-  const { addToCart } = useCart();
+  const { addToCart, selectedCategory, setSelectedCategory } = useCart();
   const [addingId, setAddingId] = useState<string | null>(null);
   const [detailProduct, setDetailProduct] = useState<Product | null>(null);
   const [selectedFinish, setSelectedFinish] = useState<string>("");
@@ -100,10 +96,10 @@ export const TrendingProducts: React.FC<TrendingProductsProps> = ({
         {/* Title */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div>
-            <h2 className="font-display text-3xl font-semibold text-primary mb-2">
+            <h2 className="font-headline-lg text-headline-lg text-primary mb-2">
               Trending Pieces
             </h2>
-            <p className="font-body text-sm text-on-surface-variant">
+            <p className="font-body-md text-body-md text-on-surface-variant">
               Exceptional craftsmanship, engineered for generations.
             </p>
           </div>
@@ -113,10 +109,10 @@ export const TrendingProducts: React.FC<TrendingProductsProps> = ({
             {categories.map((cat) => (
               <button
                 key={cat}
-                onClick={() => onSelectCategory(cat)}
-                className={`px-4 py-2 font-label text-xs font-semibold rounded transition-all cursor-pointer ${
+                onClick={() => setSelectedCategory(cat)}
+                className={`px-4 py-2 font-label-md text-label-md transition-all cursor-pointer rounded ${
                   selectedCategory === cat
-                    ? "bg-primary text-on-primary"
+                    ? "bg-secondary text-white font-bold"
                     : "bg-surface-container hover:bg-surface-container-high text-on-surface-variant"
                 }`}
               >
@@ -141,7 +137,7 @@ export const TrendingProducts: React.FC<TrendingProductsProps> = ({
 
                 {product.originalPrice && (
                   <div className="absolute top-4 left-4">
-                    <span className="px-2 py-1 bg-secondary-container text-on-secondary-container font-label text-[10px] uppercase tracking-wider rounded-sm font-bold">
+                    <span className="px-2 py-1 bg-secondary-container text-on-secondary-container font-label-sm text-[10px] uppercase tracking-wider rounded-sm font-bold">
                       Best Seller
                     </span>
                   </div>
@@ -174,20 +170,20 @@ export const TrendingProducts: React.FC<TrendingProductsProps> = ({
               {/* Text Info */}
               <div className="flex-grow flex flex-col justify-between">
                 <div>
-                  <h3 className="font-display text-lg text-primary mb-1 group-hover:text-secondary transition-colors font-semibold">
+                  <h3 className="font-headline-md text-lg text-primary mb-1 group-hover:text-secondary transition-colors font-semibold">
                     {product.name}
                   </h3>
-                  <p className="font-body text-xs text-on-surface-variant mb-3 line-clamp-2 leading-relaxed">
+                  <p className="font-body-md text-sm text-on-surface-variant mb-3 line-clamp-2 leading-relaxed">
                     {product.description}
                   </p>
                 </div>
                 <div>
                   <div className="flex items-center gap-3">
-                    <span className="font-label text-base font-semibold text-primary">
+                    <span className="font-label-md text-label-md font-bold text-primary">
                       ₹{product.price.toLocaleString("en-IN")}
                     </span>
                     {product.originalPrice && (
-                      <span className="font-body text-xs text-outline line-through">
+                      <span className="font-body-md text-sm text-outline line-through">
                         ₹{product.originalPrice.toLocaleString("en-IN")}
                       </span>
                     )}
@@ -221,27 +217,27 @@ export const TrendingProducts: React.FC<TrendingProductsProps> = ({
             <div className="md:w-1/2 p-8 flex flex-col justify-between">
               <div>
                 <div className="flex justify-between items-start mb-4">
-                  <span className="px-2.5 py-1 bg-surface-container text-on-surface-variant font-label text-[10px] uppercase tracking-wider rounded-sm font-semibold">
+                  <span className="px-2.5 py-1 bg-surface-container text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider rounded-sm font-semibold">
                     {detailProduct.category}
                   </span>
                   <button
                     onClick={() => setDetailProduct(null)}
-                    className="text-on-surface-variant hover:text-primary transition-colors p-1"
+                    className="text-on-surface-variant hover:text-primary transition-colors p-1 font-label-sm text-label-sm cursor-pointer"
                   >
                     Close
                   </button>
                 </div>
 
-                <h3 className="font-display text-2xl font-bold text-primary mb-2">
+                <h3 className="font-headline-lg text-2xl font-bold text-primary mb-2">
                   {detailProduct.name}
                 </h3>
-                <p className="font-body text-sm text-on-surface-variant mb-6 leading-relaxed">
+                <p className="font-body-md text-sm text-on-surface-variant mb-6 leading-relaxed">
                   {detailProduct.description}
                 </p>
 
                 {/* Finish Selector */}
                 <div className="mb-6">
-                  <label className="block font-label text-xs font-semibold text-primary uppercase tracking-wider mb-3">
+                  <label className="block font-label-md text-xs font-semibold text-primary uppercase tracking-wider mb-3">
                     Select Wood Finish: {selectedFinish}
                   </label>
                   <div className="flex gap-3">
@@ -249,7 +245,7 @@ export const TrendingProducts: React.FC<TrendingProductsProps> = ({
                       <button
                         key={f}
                         onClick={() => setSelectedFinish(f)}
-                        className={`px-3 py-1.5 font-label text-xs rounded border transition-all cursor-pointer ${
+                        className={`px-3 py-1.5 font-label-sm text-xs rounded border transition-all cursor-pointer ${
                           selectedFinish === f
                             ? "border-secondary bg-secondary/5 text-secondary font-semibold"
                             : "border-primary/10 hover:border-primary/30 text-on-surface-variant"
@@ -263,11 +259,11 @@ export const TrendingProducts: React.FC<TrendingProductsProps> = ({
 
                 <div className="border-t border-primary/5 pt-4">
                   <div className="flex items-baseline gap-3">
-                    <span className="font-label text-2xl font-bold text-primary">
+                    <span className="font-label-md text-2xl font-bold text-primary">
                       ₹{detailProduct.price.toLocaleString("en-IN")}
                     </span>
                     {detailProduct.originalPrice && (
-                      <span className="font-body text-sm text-outline line-through">
+                      <span className="font-body-md text-sm text-outline line-through">
                         ₹{detailProduct.originalPrice.toLocaleString("en-IN")}
                       </span>
                     )}
@@ -278,13 +274,13 @@ export const TrendingProducts: React.FC<TrendingProductsProps> = ({
               <div className="mt-8 flex gap-3">
                 <button
                   onClick={() => setDetailProduct(null)}
-                  className="flex-1 py-3 border border-primary/20 hover:bg-primary/5 transition-all text-primary font-label text-sm rounded cursor-pointer"
+                  className="flex-1 py-3 border border-primary/20 hover:bg-primary/5 transition-all text-primary font-label-md text-sm rounded cursor-pointer"
                 >
                   Cancel
                 </button>
                 <button
                   onClick={handleDetailsAddToCart}
-                  className="flex-1 py-3 bg-primary text-on-primary hover:bg-primary-container font-label text-sm rounded transition-all cursor-pointer font-bold"
+                  className="flex-1 py-3 bg-primary text-on-primary hover:bg-primary-container font-label-md text-sm rounded transition-all cursor-pointer font-bold"
                 >
                   Add to Cart
                 </button>

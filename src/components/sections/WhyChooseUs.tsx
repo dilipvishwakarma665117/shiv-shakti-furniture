@@ -13,8 +13,8 @@ export const WhyChooseUs: React.FC = () => {
             <div className="w-16 h-16 rounded-full bg-surface-container-high flex items-center justify-center mx-auto md:mx-0 mb-6 text-primary">
               <Leaf className="w-8 h-8 stroke-1.5" />
             </div>
-            <h3 className="font-display text-xl font-bold text-primary mb-3">100% Premium Wood</h3>
-            <p className="font-body text-sm text-on-surface-variant leading-relaxed">
+            <h3 className="font-headline-md text-xl text-primary mb-3">100% Premium Wood</h3>
+            <p className="font-body-md text-body-md text-on-surface-variant">
               Sustainably sourced, kiln-dried timber ensuring structural integrity, moisture-proofing, and a beautiful natural wood grain finish.
             </p>
           </div>
@@ -24,8 +24,8 @@ export const WhyChooseUs: React.FC = () => {
             <div className="w-16 h-16 rounded-full bg-surface-container-high flex items-center justify-center mx-auto md:mx-0 mb-6 text-primary">
               <Truck className="w-8 h-8 stroke-1.5" />
             </div>
-            <h3 className="font-display text-xl font-bold text-primary mb-3">Free Installation</h3>
-            <p className="font-body text-sm text-on-surface-variant leading-relaxed">
+            <h3 className="font-headline-md text-xl text-primary mb-3">Free Installation</h3>
+            <p className="font-body-md text-body-md text-on-surface-variant">
               White-glove delivery service directly to your room of choice. Our expert assembly team handles all installation and clean-up.
             </p>
           </div>
@@ -35,8 +35,8 @@ export const WhyChooseUs: React.FC = () => {
             <div className="w-16 h-16 rounded-full bg-surface-container-high flex items-center justify-center mx-auto md:mx-0 mb-6 text-primary">
               <ShieldCheck className="w-8 h-8 stroke-1.5" />
             </div>
-            <h3 className="font-display text-xl font-bold text-primary mb-3">5-Year Warranty</h3>
-            <p className="font-body text-sm text-on-surface-variant leading-relaxed">
+            <h3 className="font-headline-md text-xl text-primary mb-3">5-Year Warranty</h3>
+            <p className="font-body-md text-body-md text-on-surface-variant">
               Our craftsmanship is built to last for generations. Rest easy with our comprehensive, long-term structural guarantee.
             </p>
           </div>

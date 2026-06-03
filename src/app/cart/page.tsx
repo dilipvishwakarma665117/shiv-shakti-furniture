@@ -160,7 +160,7 @@ export default function CartPage() {
 
                 <Link
                   href="/checkout"
-                  className="w-full py-4 bg-primary text-on-primary hover:bg-primary-container font-label text-sm font-bold rounded shadow-md flex items-center justify-center gap-2 transition-all duration-300"
+                  className="w-full py-4 bg-primary text-white hover:bg-secondary hover:text-white transition-all duration-300 font-label-md text-label-md font-bold rounded shadow-md flex items-center justify-center gap-2 uppercase tracking-wider"
                 >
                   Proceed to Checkout
                   <ArrowRight className="w-4 h-4" />

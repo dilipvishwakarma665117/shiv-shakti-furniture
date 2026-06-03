@@ -56,7 +56,7 @@ export default function CheckoutPage() {
             </div>
             <Link
               href="/"
-              className="inline-block w-full py-4 bg-primary text-on-primary hover:bg-primary-container font-label text-sm font-semibold rounded shadow-md transition-all duration-300"
+              className="inline-block w-full py-4 bg-primary text-white hover:bg-secondary hover:text-white transition-all duration-300 font-label-md text-label-md font-bold rounded shadow-md uppercase tracking-wider text-center"
             >
               Return to Gallery
             </Link>
@@ -98,7 +98,7 @@ export default function CheckoutPage() {
               </p>
               <Link
                 href="/"
-                className="px-8 py-4 bg-primary text-on-primary hover:bg-primary-container font-label text-sm font-semibold rounded transition-all duration-300 shadow-md"
+                className="px-8 py-4 bg-primary text-white hover:bg-secondary hover:text-white transition-all duration-300 font-label-md text-label-md font-bold rounded shadow-md uppercase tracking-wider text-center"
               >
                 Go to Shop
               </Link>
@@ -293,7 +293,7 @@ export default function CheckoutPage() {
 
                   <button
                     type="submit"
-                    className="w-full py-4 bg-secondary-container text-on-secondary-container hover:bg-secondary hover:text-on-secondary font-label text-sm font-bold rounded shadow-md flex items-center justify-center gap-2 transition-all duration-300 cursor-pointer"
+                    className="w-full py-4 bg-secondary-container text-on-secondary-container hover:bg-secondary hover:text-white transition-all duration-300 font-label-md text-label-md font-bold rounded shadow-md flex items-center justify-center gap-2 cursor-pointer uppercase tracking-wider"
                   >
                     Confirm & Book Order
                     <ChevronRight className="w-4 h-4" />

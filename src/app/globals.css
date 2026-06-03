@@ -5,6 +5,24 @@
   --font-body: var(--font-inter), sans-serif;
   --font-label: var(--font-inter), sans-serif;
 
+  --font-headline-lg: var(--font-noto-serif), serif;
+  --font-headline-md: var(--font-noto-serif), serif;
+  --font-display-lg: var(--font-noto-serif), serif;
+  --font-display-lg-mobile: var(--font-noto-serif), serif;
+  --font-body-lg: var(--font-inter), sans-serif;
+  --font-body-md: var(--font-inter), sans-serif;
+  --font-label-md: var(--font-inter), sans-serif;
+  --font-label-sm: var(--font-inter), sans-serif;
+
+  --text-headline-lg: 2rem; /* 32px */
+  --text-label-sm: 0.75rem; /* 12px */
+  --text-body-lg: 1.125rem; /* 18px */
+  --text-headline-md: 1.5rem; /* 24px */
+  --text-display-lg: 3rem; /* 48px */
+  --text-display-lg-mobile: 2.25rem; /* 36px */
+  --text-body-md: 1rem; /* 16px */
+  --text-label-md: 0.875rem; /* 14px */
+
   --color-primary: #16110f;
   --color-primary-container: #2c2523;
   --color-primary-fixed: #ede0dc;

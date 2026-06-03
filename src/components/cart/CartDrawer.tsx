@@ -188,7 +188,7 @@ export const CartDrawer: React.FC = () => {
 
             <button
               onClick={handleCheckout}
-              className="w-full py-4 bg-secondary-container text-on-secondary-container hover:bg-secondary hover:text-on-secondary transition-all duration-300 font-label rounded shadow-[0_4px_25px_rgba(44,37,35,0.08)] flex items-center justify-center gap-2 cursor-pointer font-bold"
+              className="w-full py-4 bg-secondary-container text-on-secondary-container hover:bg-secondary hover:text-white transition-all duration-300 font-label-md text-label-md rounded shadow-[0_4px_25px_rgba(44,37,35,0.08)] flex items-center justify-center gap-2 cursor-pointer font-bold uppercase tracking-wider"
             >
               Proceed to Checkout
             </button>
