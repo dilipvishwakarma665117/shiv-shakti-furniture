@@ -147,7 +147,7 @@ export const TrendingProducts: React.FC<TrendingProductsProps> = ({
                 <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3">
                   <button
                     onClick={() => handleOpenDetails(product)}
-                    className="w-12 h-12 bg-surface-container-lowest text-primary rounded-full shadow-lg flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all duration-300 transform translate-y-4 group-hover:translate-y-0 cursor-pointer"
+                    className="w-12 h-12 bg-surface-container-lowest text-primary rounded-full shadow-lg flex items-center justify-center hover:bg-secondary hover:text-white transition-all duration-300 transform translate-y-4 group-hover:translate-y-0 cursor-pointer"
                     aria-label="View details"
                   >
                     <Eye className="w-5 h-5" />
@@ -155,7 +155,7 @@ export const TrendingProducts: React.FC<TrendingProductsProps> = ({
 
                   <button
                     onClick={() => handleAddToCart(product)}
-                    className="w-12 h-12 bg-surface-container-lowest text-primary rounded-full shadow-lg flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all duration-300 transform translate-y-4 group-hover:translate-y-0 cursor-pointer"
+                    className="w-12 h-12 bg-surface-container-lowest text-primary rounded-full shadow-lg flex items-center justify-center hover:bg-secondary hover:text-white transition-all duration-300 transform translate-y-4 group-hover:translate-y-0 cursor-pointer"
                     aria-label="Add to cart"
                   >
                     {addingId === product.id ? (
@@ -280,7 +280,7 @@ export const TrendingProducts: React.FC<TrendingProductsProps> = ({
                 </button>
                 <button
                   onClick={handleDetailsAddToCart}
-                  className="flex-1 py-3 bg-primary text-on-primary hover:bg-primary-container font-label-md text-sm rounded transition-all cursor-pointer font-bold"
+                  className="flex-1 py-3 bg-primary text-white hover:bg-secondary transition-all duration-300 font-label-md text-sm rounded cursor-pointer font-bold uppercase tracking-wider"
                 >
                   Add to Cart
                 </button>

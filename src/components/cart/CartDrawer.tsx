@@ -101,7 +101,7 @@ export const CartDrawer: React.FC = () => {
               </p>
               <button
                 onClick={handleClose}
-                className="px-6 py-3 bg-primary text-on-primary hover:bg-primary-container font-label text-sm rounded transition-all duration-300 cursor-pointer"
+                className="px-6 py-3 bg-primary text-white hover:bg-secondary transition-all duration-300 font-label-md text-label-md font-bold rounded shadow-md uppercase tracking-wider cursor-pointer"
               >
                 Continue Shopping
               </button>

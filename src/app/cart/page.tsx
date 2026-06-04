@@ -41,7 +41,7 @@ export default function CartPage() {
               </p>
               <Link
                 href="/"
-                className="px-8 py-4 bg-primary text-on-primary hover:bg-primary-container font-label text-sm font-semibold rounded transition-all duration-300 shadow-md"
+                className="px-8 py-4 bg-primary text-white hover:bg-secondary transition-all duration-300 font-label-md text-label-md font-bold rounded shadow-md uppercase tracking-wider text-center"
               >
                 Explore Catalog
               </Link>
