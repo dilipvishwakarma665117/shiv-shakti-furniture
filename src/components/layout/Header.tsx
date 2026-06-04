@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
 import { Search, Heart, ShoppingCart, Menu, X } from "lucide-react";
 import { useCart } from "@/context/CartContext";
-import { useAuth, UserButton } from "@clerk/nextjs";
+import { useAuth, UserButton, useUser } from "@clerk/nextjs";
 
 export const Header: React.FC = () => {
   const { cartCount, setIsConsultationOpen, setSelectedCategory, isConsultationOpen, selectedCategory } = useCart();
@@ -13,6 +13,8 @@ export const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const { isSignedIn } = useAuth();
+  const { user } = useUser();
+  const isAdmin = user?.emailAddresses[0]?.emailAddress === "dileepv9721@gmail.com";
   
   const router = useRouter();
   const pathname = usePathname();
@@ -229,6 +231,16 @@ export const Header: React.FC = () => {
             </span>
           </Link>
 
+          {/* Admin Panel Link (Only visible to admin) */}
+          {isAdmin && (
+            <Link
+              href="/admin"
+              className="mr-3 text-secondary hover:text-primary transition-colors font-label text-xs font-bold border border-secondary/20 rounded px-3 py-1.5 bg-secondary/5"
+            >
+              Admin
+            </Link>
+          )}
+
           {/* User Profile Button */}
           <div className="flex items-center pl-2 border-l border-primary/10">
             {isSignedIn ? (
@@ -282,6 +294,15 @@ export const Header: React.FC = () => {
 
           {/* Mobile Auth options */}
           <div className="pt-6 border-t border-primary/10 font-display">
+            {isAdmin && (
+              <Link
+                href="/admin"
+                className="inline-block w-full mb-4 py-4 bg-secondary text-white hover:bg-primary transition-all duration-300 font-label-md text-label-md rounded text-center cursor-pointer font-bold uppercase tracking-wider"
+                onClick={handleMobileLinkClick}
+              >
+                Admin Panel
+              </Link>
+            )}
             {isSignedIn ? (
               <div className="flex items-center gap-3 py-2">
                 <UserButton />
